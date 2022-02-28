@@ -1,0 +1,16 @@
+version: '3.2'
+services:
+  node:
+    build: ./
+    ports:
+      - "3333:3333"
+    depends_on:
+      - db
+    env_file:
+      - ./.env
+  db:
+    build: ./db
+    ports:
+      - "3306:3306"
+    env_file:
+      - ./.env

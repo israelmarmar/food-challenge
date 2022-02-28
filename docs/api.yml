@@ -1,0 +1,166 @@
+openapi: 3.0.0
+info:
+  title: react-native-challenge
+  contact: {}
+  version: '1.0'
+servers:
+- url: http://localhost:3333
+  variables: {}
+paths:
+  /:
+    get:
+      tags:
+      - Misc
+      summary: hello
+      operationId: hello
+      parameters: []
+      responses:
+        200:
+          description: ''
+          headers: {}
+      deprecated: false
+  /products:
+    get:
+      tags:
+      - Misc
+      summary: show products
+      operationId: showproducts
+      parameters: []
+      responses:
+        200:
+          description: ''
+          headers: {}
+      deprecated: false
+  /products/3:
+    get:
+      tags:
+      - Misc
+      summary: get product
+      operationId: getproduct
+      parameters: []
+      responses:
+        200:
+          description: ''
+          headers: {}
+      deprecated: false
+    delete:
+      tags:
+      - Misc
+      summary: delete product
+      operationId: deleteproduct
+      parameters: []
+      responses:
+        200:
+          description: ''
+          headers: {}
+      deprecated: false
+  /products/1:
+    put:
+      tags:
+      - Misc
+      summary: update product
+      operationId: updateproduct
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateproductrequest'
+            example:
+              title: White eggs
+              type: dairy
+              description: Raw organic white eggs in a basket
+              filename: 0.jpg
+              height: 600
+              width: 400
+              price: 28.100000000000001
+              rating: 4
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+      deprecated: false
+  /session:
+    post:
+      tags:
+      - Misc
+      summary: create session
+      operationId: createsession
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/createsessionrequest'
+            example:
+              user: luiz
+              pwd: 123
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+      deprecated: false
+components:
+  schemas:
+    updateproductrequest:
+      title: updateproductrequest
+      required:
+      - title
+      - type
+      - description
+      - filename
+      - height
+      - width
+      - price
+      - rating
+      type: object
+      properties:
+        title:
+          type: string
+        type:
+          type: string
+        description:
+          type: string
+        filename:
+          type: string
+        height:
+          type: integer
+          format: int32
+        width:
+          type: integer
+          format: int32
+        price:
+          type: number
+        rating:
+          type: integer
+          format: int32
+      example:
+        title: White eggs
+        type: dairy
+        description: Raw organic white eggs in a basket
+        filename: 0.jpg
+        height: 600
+        width: 400
+        price: 28.100000000000001
+        rating: 4
+    createsessionrequest:
+      title: createsessionrequest
+      required:
+      - user
+      - pwd
+      type: object
+      properties:
+        user:
+          type: string
+        pwd:
+          type: string
+      example:
+        user: luiz
+        pwd: 123
+tags:
+- name: Misc
+  description: ''

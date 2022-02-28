@@ -1,0 +1,35 @@
+web/node_modules/**/*
+api/node_modules/**/*
+api/dist
+mob/node_modules/**/*
+mob/.expo/*
+mob/npm-debug.*
+mob/*.jks
+mob/*.p8
+mob/*.p12
+mob/*.key
+mob/*.mobprovision
+mob/*.orig.*
+mob/web-build/
+
+
+
+web/.pnp
+web/.pnp.js
+
+# testing
+web/coverage
+
+# production
+web/build
+
+# misc
+web/.DS_Store
+web/.env.local
+web/.env.development.local
+web/.env.test.local
+web/.env.production.local
+
+web/npm-debug.log*
+web/yarn-debug.log*
+web/yarn-error.log*
