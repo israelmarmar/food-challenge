@@ -10,7 +10,7 @@ Have Docker and Docker compose installed on your machine.
 To get started, type in the terminal: npm install.
 To run, run the command: docker-compose up.
 
-## furniture
+## Mobile
 
 Mobile application in React Native
 

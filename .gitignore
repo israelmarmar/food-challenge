@@ -11,6 +11,7 @@ mob/*.key
 mob/*.mobprovision
 mob/*.orig.*
 mob/web-build/
+.history
 
 
 
