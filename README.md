@@ -8,7 +8,7 @@ Application backend in Node.JS
 
 Have Docker and Docker compose installed on your machine.
 To run, run the command: docker-compose up -d.
-Ther, enter the container and run: npm run migrate && npm run migrate:seed && npm run start
+Then, enter the container and run: npm run migrate && npm run migrate:seed && npm run start
 
 ## Mobile
 
