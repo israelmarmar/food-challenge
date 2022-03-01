@@ -2,12 +2,16 @@ version: '3.2'
 services:
   node:
     build: ./
+    entrypoint: dockerize -wait tcp://db:3306 -timeout 20s docker-entrypoint.sh
     ports:
       - "3333:3333"
     depends_on:
       - db
     env_file:
       - ./.env
+    volumes:
+      - ./:/usr/src/app
+    tty: true
   db:
     build: ./db
     ports:

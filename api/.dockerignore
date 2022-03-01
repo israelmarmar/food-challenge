@@ -1,1 +1,5 @@
-node_modules
+# comment
+*/temp*
+*/*/temp*
+temp?
+package-lock.json

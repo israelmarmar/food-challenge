@@ -20,7 +20,7 @@ export async function up(query: QueryInterface) {
         allowNull: false,
       },
       description: {
-        type: DataTypes.STRING(128),
+        type: DataTypes.TEXT,
         allowNull: false,
       },
       filename: {

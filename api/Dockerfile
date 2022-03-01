@@ -1,18 +1,12 @@
-FROM node:alpine
+FROM node:15
 
-  RUN apk add --no-cache bash 
+WORKDIR /usr/src/app
 
-  RUN mkdir -p /usr/src/app
+RUN apt-get update && apt-get install -y wget
 
-  WORKDIR /usr/src/app
+ENV DOCKERIZE_VERSION v0.6.1
+RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
+    && tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
+    && rm dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
 
-  COPY package.json /usr/src/app/
-
-  RUN npm install
-
-  COPY . /usr/src/app
-  COPY wait-for-it.sh /
-
-  EXPOSE 3333
-
-  CMD /wait-for-it.sh db:3306 -- npm run migrate && npm run migrate:seed && npm run start
+EXPOSE 3000
